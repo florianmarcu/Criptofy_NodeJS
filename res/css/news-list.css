@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+body *,footer *,header *{
+    overflow-x: hidden;
+}
+/*Header-ul*/
+#header-title{
+    height: 80px;
+}
+header nav{
+    background-color: rgb(5, 43, 43);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* header nav ul li a{
+    display: block;
+} */
+header input{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 20px;
+    height: 25px;
+    background-color: transparent;
+    border:0;
+    border-bottom: 1px solid white;
+    color: white;
+    outline: none;
+    font-family: Roboto;
+    opacity: 0.5;
+}
+header input::placeholder{
+    color: white;
+}
+header nav>ul{ 
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 500px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.news-list{
+    margin-top: auto;
+    margin-bottom: auto;
+    list-style: none;
+    position: absolute;
+    display: flex;
+    float: left;
+    top: 84px;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: center;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
+    transition-property: visibility, opacity;
+}
+.news-list li a{
+    padding-top: 20px;
+    font-size:18px;
+}
+.news-list h1{
+    margin-bottom: 10px;
+}
+.news-list li{
+    margin: 0px 10px;
+    border-radius: 0 0 8px 8px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(236, 235, 235);
+    max-width: 600px;
+    overflow-y: hidden;
+}
+.news-list li *{
+    color:black;
+}
+.news-list li a p{
+    text-decoration: none;
+    font-size: 25px;
+}
+
+header nav>ul>li{
+    border: 2px solid transparent;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
+    transition-property: background-color,color, border;
+}
+header nav>ul>li>a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: 'Roboto';
+}
+header nav>ul>li:hover, header nav>ul>li:focus{
+    background-color: #031616;
+    border: 2px solid #031616;
+    border-right: 10px solid #031616;
+    border-left: 10px solid #031616;
+    border-radius: 5px;
+}
+header nav>ul>li:hover .news-list{
+    visibility: visible;
+    opacity: 1;
+}
+#menu-button{
+    display: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #23d521;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-property: background-color,color;
+    -webkit-tap-highlight-color: transparent;
+}
+#search-button{
+    display: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    color: #23d521;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-property: background-color, color;
+    -webkit-tap-highlight-color: transparent;
+}
+#menu-button:focus, #menu-button:hover, #search-button:focus, #search-button:hover{
+    background-color:#23d521;
+    color: rgb(5, 43, 43);
+}
+/*-----------Main-------------*/
+
+main{
+    margin: 100px 80px;
+}
+main *{
+    color:black;
+}
+main h1{
+    width: 100%;
+    text-align: left;
+    font-size: 60px;
+    margin: 100px 0px 100px 100px;
+}
+main figure{
+    display: table;
+    text-align: center;
+}
+main figcaption{
+    display: table-caption;
+    caption-side: bottom;
+}
+main img{
+    width: 60%;
+    caption-side: bottom;
+}
+main p{
+    line-height: 1.6;
+    text-indent: 50px;
+    font-size: 24px;
+    margin: 100px 0px 100px 100px;
+}
+main li{
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    transition-property: background-color,border-radius;
+}
+main li:hover{
+    background-color: rgb(226, 226, 226);
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+}
+/*footer*/
+footer{
+    padding-right: 30px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: white;
+    padding-top: 20px;
+    margin-top: 50px;
+    background-color: rgb(5, 43, 43);
+    display: grid;
+    grid-column-gap: 10px;
+}
+#footer-title{
+    height: 80px;
+}
+footer ul{
+    list-style: none;
+}
+footer ul li,footer ul li a{
+    margin-bottom: 20px;
+    color:white;
+}
+footer ul:nth-child(1){
+    grid-area: 1/1/3/2;
+    row-gap: 20px;
+}
+footer ul:nth-child(2){
+    grid-area: 1/2/4/3;  
+}
+footer ul:nth-child(3){
+    grid-area: 1/3/4/4;
+}
+#appstore-button, #playstore-button{
+    cursor: pointer;
+    outline: none;
+    border: 3px solid transparent;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+#appstore-button>img, #playstore-button>img{
+    height: 70px;
+}
+/**/
+
+@media screen and (max-width:920px){
+    .news-list{
+        display: none; 
+    }
+    header nav ul { /*Lista cu optiuni(Stiri, Topul zilei, Diagrame*/
+        position: relative; 
+        display: none;
+        float: left;
+    }
+    header input{
+        display:none;
+    }
+    .tabel{
+        margin-left: 10px;
+        width: 100%;
+    }
+    /**/
+   
+    #menu-button{
+        display: block;
+        float: left;
+    }
+    #menu-button ul{
+        position: absolute;
+        display: flex;
+        width: 130px;
+        top: 84px;
+        left: 0;
+        list-style: none;
+        flex-direction: column;
+        opacity: 0;
+        border-radius: 0px 0px 10px 0px;
+        visibility: hidden;
+        transition-timing-function: ease-in;
+        transition-duration: 0.3s;
+        transition-property: visibility, opacity;
+    }
+    #menu-button ul li a{
+        display: block;
+        color: black;
+        font-size: 20px;
+        transition-timing-function: ease-in;
+        transition-duration: 0.3s;
+        border: 10px solid rgb(236, 233, 233);
+        transition-property: background-color, border;
+        
+    }
+    #menu-button ul li a:hover,
+    #menu-button ul li a:focus{
+        background-color: lightgrey;
+        border: 10px solid lightgrey;
+    }
+    #menu-button ul li{
+        text-align: left;
+        padding:10px;
+        background-color: rgb(236, 233, 233);
+    }
+    #menu-button:hover ul,
+    #menu-button:focus ul{
+        visibility: visible;
+        opacity: 1;
+    }
+    #search-button{
+        display: inline;
+    }
+
+    main{
+        margin: 5px;
+    }
+    main h1{
+        width: 90%;
+        text-align: left;
+        font-size: 40px;
+        margin: 30px;
+    }
+    main figure{
+        display: table;
+        text-align: center;
+    }
+    main figcaption{
+        display: table-caption;
+        caption-side: bottom;
+    }
+    main img{
+        width: 60%;
+        caption-side: bottom;
+    }
+    main p{
+        line-height: 1.3;
+        text-indent: 50px;
+        font-size: 18px;
+        margin: 10px;
+        margin-left: 20px;
+    }
+    footer{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    #footer-title{
+        height: 30px;
+    }
+    #appstore-button>img, #playstore-button>img{
+        height: 35px;
+    }
+}

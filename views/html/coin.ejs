@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="height=device-height, initial-scale=1.0">
+        <link type= "text/css" rel="stylesheet" href="/css/index.css">
+        <link type= "text/css" rel="stylesheet" href="/css/coin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link type ="text/css" rel="stylesheet" href="/css/fontawesome.min.css">
+        <link type = "text/css" rel="stylesheet" href="/css/all.min.css">
+        <title>Criptofy</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.svg" id="favicon">
+    </head>
+    <body>
+        <a name="top"></a>
+        <%-  include('../fragments/header')  %>   
+        <main>
+            <!-- Press count: 
+            <p id = "info"></p> -->
+            <img src="images/background.png" alt="">
+            <div>
+                <img src= <%= "https://s2.coinmarketcap.com/static/img/coins/64x64/" + locals.coin.id + ".png" %>  alt="">
+                <h1 id = "coin-name">
+                    <%= locals.coin.name%>
+                </h1>
+                <form method = "post" action="/add-to-favorites">
+                    <button>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </form>
+            </div>
+            <div id = "stats">
+                <h1>Price: <%= locals.coin.quote.USD.price %> USD</h1>
+                <br>
+                <h1 id>
+                    <%= locals.coin.quote.USD.percent_change_24h%> (last 24 hours)
+                </h1>
+                
+            </div>
+        </main>
+        <%- include('../fragments/footer')%>
+        <script src = "/scripts/table.js"></script> 
+        <script src = "/scripts/coin.js"></script>
+        <script src = "/scripts/localStorage.js"></script>
+    </body>
+</html>

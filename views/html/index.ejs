@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = "ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="height=device-height, initial-scale=1.0">
+        <link type= "text/css" rel="stylesheet" href="/css/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link type ="text/css" rel="stylesheet" href="/css/fontawesome.min.css">
+        <link type = "text/css" rel="stylesheet" href="/css/all.min.css">
+        <title>Criptofy</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.svg" id="favicon">
+    </head>
+    <body>
+        <a name="top"></a>
+        <%-  include('../fragments/header')  %>   
+        <main>
+            <img src="images/background.png" alt="">
+            <div class = "tabel">
+                <h2>Criptomonede</h2>
+                <div id = "filtre-button-div">
+                    <button id=filtre-button>
+                        Sum by value
+                    </button>
+                </div>
+                
+                <table id="crypto-table">
+                    <thead>
+                        <tr>
+                            <th>Moneda</th>
+                            <th>Valoare</th>
+                            <th>Volum (24h)</th>
+                            <th>Schimbare (24h)</th>
+                            <th>Schimbare (7d)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i = 0; i < locals.cryptoData.data.length; i++) { %>
+                        <tr>
+                            <td>
+                                <img src= <%= "https://s2.coinmarketcap.com/static/img/coins/64x64/" + locals.cryptoData.data[i].id + ".png" %>  alt="" width=16px height = 16px>
+                                <a href= <%= "/coin?id=" + locals.cryptoData.data[i].slug %> ><%= locals.cryptoData.data[i].name %></a>
+                            </td>
+                            <td><%= locals.cryptoData.data[i].quote.USD.price %></td>
+                            <td><%= locals.cryptoData.data[i].quote.USD.volume_24h %></td>
+                            <td><%= locals.cryptoData.data[i].quote.USD.percent_change_24h %></td>
+                            <td><%= locals.cryptoData.data[i].quote.USD.percent_change_7d %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table> 
+            </div>
+            <a href="#top" id="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </main>
+        <%- include('../fragments/footer')%>
+        <script src = "/scripts/table.js"></script> 
+    </body>
+</html>

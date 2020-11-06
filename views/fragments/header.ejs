@@ -1,0 +1,99 @@
+<header>
+    <nav>
+        <div id="menu-button">
+            <i class="fas fa-bars"></i>
+            <ul class="nav-menu">
+                <li>
+                    <a href="/news-list">Stiri</a>
+                </li>
+                <li>
+                    <a href="#">Topul Zilei</a>
+                </li>
+                <li>
+                    <a href="#">Diagrame</a>
+                </li>
+            </ul>
+        </div>
+        <!--TODO: Add button on page title-->
+        <a href="/index">
+            <img src="/images/title.png" id ="header-title" alt="">
+        </a>
+        <ul>
+            <li><a href="/news-list">Stiri</a>
+                <ul class="news-list">
+                    <li>
+                        <a href="/news1">
+                            <h2>
+                                The World Just Hit 1 Million Coronavirus Infections
+                            </h2>
+                            <p>
+                                The new coronavirus has now infected 1 million people 
+                                across the world, a milestone reached just four months 
+                                after it first surfaced in the Chinese city of Wuhan. 
+                                More than 51,000 have died and 208,000 recovered in what 
+                                has become the biggest global public health crisis of our time.
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/news2">
+                            <h2>
+                                Bitcoin Cryptocurrencies Bitcoin Pushes Through Key Level That Spurred January Rally
+                            </h2>
+                            <p>
+                                Bitcoin is struggling to hold onto gains following a prolonged 
+                                bout of selling, but at least one measure shows that a rally could 
+                                be ahead.
+                                Based on the DVAN Buying and Selling Pressure Gauge, Bitcoin jumped 
+                                above a crucial level of resistance, triggering a positive divergence 
+                                and a buy signal. A similar trend played out in January ahead of Bitcoin’s 
+                                surge past $10,000.
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/news3">
+                            <h2>
+                                Biggest Winner in Crypto Crash Is Most Controversial Coin
+                            </h2>
+                            <p>
+                                With most asset classes hurting during the coronavirus pandemic,
+                                 one cryptocurrency has emerged as the biggest winner in 
+                                 that sector: The token known as Tether.
+                                 While crypto bellwether Bitcoin’s 
+                                market capitalization has shrunk 37% since mid-February, Tether’s increased
+                                 by 38%, or nearly $2 billion, according to researcher Messari.
+                                
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Topul Zilei</a></li>
+            <li><a href="#">Diagrame</a></li>
+        </ul>
+        <form method = "post" action="/find">
+            <input type="text" name="coinSlug" placeholder="Cauta">
+            <input type="submit" value="ok" id= "submit-button">
+        </form>
+        <div id="search-button">
+            <i class="fas fa-search"></i>
+        </div>
+        <% if(!locals.user){ %>
+        <button id="login-button" type="button" onclick="window.location.href='/signin'">Log In</button>
+        <button id="register-button" type="button" onclick="window.location.href='/register'">Register</button>
+        <% } 
+        else { %>
+        Logged in: <%= locals.ip %>
+        <br>
+        <% if(locals.user.logTimes != 0){ %>
+        Last logged in: <%= locals.user.lastLog %>
+        <br>
+        You've logged in <%= locals.user.logTimes %> times.
+        <% } else{ %>
+            Hello, it's your first time here.
+        <% }%>
+        <a href="/signout" id ="logout-button">Sign out</a>
+        <% } %>
+    </nav>
+</header>     

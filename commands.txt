@@ -1,0 +1,1 @@
+curl -H "X-CMC_PRO_API_KEY: 3f4e05bd-c7ca-4420-8f9e-77853130e4cf" -H "Accept: application/json" -d "start=1&limit=50&convert=USD" -G https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest

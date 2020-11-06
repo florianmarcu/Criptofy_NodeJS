@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="height=device-height, initial-scale=1.0">
+        <link type= "text/css" rel="stylesheet" href="/css/index.css">
+        <link type= "text/css" rel="stylesheet" href="/css/signin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link type ="text/css" rel="stylesheet" href="/css/fontawesome.min.css">
+        <link type = "text/css" rel="stylesheet" href="/css/all.min.css">
+        <title>Criptofy</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.svg" id="favicon">
+    </head>
+    <body>
+        <a name="top"></a>
+        <%- include('../fragments/header') %>
+        <main>
+            <img src="images/background.png" alt="">
+            <form enctype="multipart/form-data" method="post" action="/register"> <!-- daca nu pun action atunci actionul default este pagina curenta -->
+                <label>
+                    Username: <input type="text" name="username" value="">
+                </label>
+                <br>
+                <label>
+                    Parola: <input type="password" name="password" value="">
+                </label>
+                <br>
+                <label>
+                    Reintroduceti parola: <input type="password" name="password2" value="">
+                </label>
+                <br>
+                <p>
+                    <label>
+                        Poza: <input type="file" name="poza" />
+                    </label>
+                </p>
+                <p>		
+                    <input type="submit" value="OK">
+                </p>
+            </form>
+        </main>
+        <%-  include('../fragments/footer')  %>
+    </body>
+</html>

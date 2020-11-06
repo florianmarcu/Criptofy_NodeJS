@@ -1,0 +1,9 @@
+main>div{
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+}
+#stats{
+    display: flex;
+    flex-direction: column;
+}
